@@ -14,7 +14,7 @@ function feetToMile(feet){
 }
 var feet = 100000;
 var mile = feetToMile(feet);
-console.log(mile);
+console.log(feet, "Feet = ", mile, " Mile");
 
 // ------------------ 2. Wood Calculator ----------------
 
@@ -26,7 +26,7 @@ function woodCalculator(chair, table, bed){
 
 var chair = 6, table = 1, bed = 3;
 var totalWood = woodCalculator(chair, table, bed);
-console.log(totalWood);
+console.log("Wood needed: ", totalWood , " Qubic feet");
 
 // ------------------ 3. brickCalculator ----------------
 
@@ -50,27 +50,28 @@ function brickCalculator(floorNumber){
 
 var floorNumber = 5;
 var totalBrick = brickCalculator(floorNumber);
-console.log(totalBrick);
+console.log("Total Bricks: ", totalBrick);
 
 // ------------------ 4. Tiny Friend ----------------
 
-function tinyFriend(friends){
-    var tinyFriend;
-    if(friends == null){
-        tinyFriend = "You have no friends.";
+function tinyFriend(friendsName){
+    var tinyFriendName;
+    if(friendsName == null){
+        tinyFriendName = "You have no friends.";
     }
     else{
-        tinyFriend = friends[0];
-        for(var i = 1; i < friends.length; i++)
+        tinyFriendName = friendsName[0];
+        for(var i = 1; i < friendsName.length; i++)
         {
-            var currentFriend = friends[i];
-            if(tinyFriend.length > currentFriend.length){
-                tinyFriend = currentFriend;
+            var currentFriendName = friendsName[i];
+            if(tinyFriendName.length > currentFriendName.length){
+                tinyFriendName = currentFriendName;
             }
         }
     }
-    return tinyFriend;
+    return tinyFriendName;
 }
-var friends = (["Shamim", "Himel", "Abrar", "Aikul", "Shahjalal", "Sharif", "Nahid", "Abdullah", "Opu"]);
-var tinyFriend = tinyFriend(friends);
-console.log(tinyFriend);
+var friends = ["Shamim", "Himel", "Abrar", "Aikul", "Shahjalal", "Sharif", "Nahid", "Abdullah", "Opu"];
+var result = tinyFriend(friends);
+console.log("My Tiny Friend: ", result);
+console.log("Name length: ", result.length);
